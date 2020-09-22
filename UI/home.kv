@@ -1,0 +1,15 @@
+MDScreen:
+    name: "home"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "QNote"
+            right_action_items: [["file-plus", lambda x: app.change_screen("new_note")]]
+
+        ScrollView:
+            MDList:
+                TwoLineListItem:
+                    text: "Two-line item"
+                    secondary_text: "Secondary text here"

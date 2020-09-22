@@ -1,0 +1,16 @@
+MDScreen:
+    name: "new_note"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "QNote"
+            right_action_items: [["content-save", lambda x: app.change_screen("home")]]
+
+        MDTextField:
+            hint_text: "Title"
+            mode: "rectangle"
+        
+        MDTextFieldRect:
+            hint_text: "Write your note."
