@@ -6,19 +6,31 @@ from kivymd.app import MDApp
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager
 from kivymd.uix.list import TwoLineListItem
+from kivy.clock import Clock
 
-notes= list()
+import json,os
+
+with open("data.json") as data:
+    notes = json.load(data)
+
 
 class MainApp(MDApp):
     def notes_list(self):
         """Add list of all notes on home 
         """
-        screenMGR.get_screen("home").ids.notes_list.add_widget(
-            TwoLineListItem(
-                text="qwerty",
-                secondary_text="ajsbfpiabffbasf"
+
+        for num,data in notes.items():
+            screenMGR.get_screen("home").ids.notes_list.add_widget(
+                TwoLineListItem(
+                    text= data["Title"],
+                    secondary_text= data["Note"]
+                )
             )
-        )
+
+    def update_list(self,dt):
+        screenMGR.get_screen("home").ids.notes_list.clear_widgets()
+        self.notes_list()
+
 
     def save_note(self,title,note):
         """This menod get data from text box in title and note arguments
@@ -27,9 +39,11 @@ class MainApp(MDApp):
             title (String): data from title box
             note (String): data from note box
         """
-        print(title,note)
-        notes.append({"Title":title,"Note":note})
-        print(notes)
+        notes[str(len(notes)+1)] = {"Title": title, "Note": note}
+        os.remove("data.json")
+        with open("data.json","w") as data:
+            data.write(json.dumps(notes,indent=4))
+
         self.change_screen("home")
 
     def change_screen(self,name):
@@ -41,6 +55,7 @@ class MainApp(MDApp):
         screenMGR.current = name
 
     def build(self):
+        Clock.schedule_interval(self.update_list, 1)
         global screenMGR
         screenMGR = ScreenManager()
         screenMGR.add_widget(Builder.load_file("UI//home.kv"))
