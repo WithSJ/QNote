@@ -1,46 +1,7 @@
 {
     "1": {
-        "Title": "new note",
-        "Note": "My first note"
+        "Title": "QNote",
+        "Note": "Personal note making app."
     },
-    "2": {
-        "Title": "qqqqqqqqqqq",
-        "Note": "wwwwwwwwwwww"
-    },
-    "3": {
-        "Title": "tttttt",
-        "Note": "eeeeeeeee"
-    },
-    "4": {
-        "Title": "sdasdas",
-        "Note": "asdasdasd"
-    },
-    "5": {
-        "Title": "sadas",
-        "Note": "asdas"
-    },
-    "6": {
-        "Title": "eeee",
-        "Note": "eeee"
-    },
-    "7": {
-        "Title": "tttttttttttt",
-        "Note": "ttttttttttttt"
-    },
-    "8": {
-        "Title": "iiiiiiiii",
-        "Note": "iiiiiiiiiiii"
-    },
-    "9": {
-        "Title": "iiiiiiiii",
-        "Note": "iiiiiiiiiiii"
-    },
-    "10": {
-        "Title": "yyyyyyyyyyy",
-        "Note": "yyyyyyyyyyyyyyyyyyyyyyyyy"
-    },
-    "11": {
-        "Title": "eeeeeeeeeeee",
-        "Note": "eeeeeeeeeeeee"
-    }
+    
 }
