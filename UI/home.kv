@@ -8,8 +8,12 @@ MDScreen:
             title: "QNote"
             right_action_items: [["file-plus", lambda x: app.change_screen("new_note")]]
 
-        ScrollView:
-            MDList:
-                id: notes_list
+        
+        BoxLayout:
+            orientation: "vertical"
+            
+            ScrollView:
+                MDList:
+                    id: notes_list
 
                 

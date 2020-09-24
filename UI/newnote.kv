@@ -8,11 +8,17 @@ MDScreen:
             title: "QNote"
             right_action_items: [["content-save", lambda x: app.save_note(title_box.text,note_box.text)]]
 
-        MDTextField:
-            id: title_box
-            hint_text: "Title"
-            mode: "rectangle"
-        
-        MDTextFieldRect:
-            id: note_box
-            hint_text: "Write your note."
+        BoxLayout:
+            orientation: "vertical"
+            padding: 5
+            spacing: 5
+            
+            MDTextField:
+                id: title_box
+                hint_text: "Title"
+                mode: "rectangle"
+
+            
+            MDTextFieldRect:
+                id: note_box
+                hint_text: "Write your note."
